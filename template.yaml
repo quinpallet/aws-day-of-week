@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Runtime: nodejs18.x
+    Architectures:
+      - arm64
+    Handler: handler.handler
+    CodeUri: dist/
+
+Resources:
+  DayOfWeekFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Events:
+        GetDayOfWeek:
+          Type: Api
+          Properties:
+            Path: /day-of-week
+            Method: GET
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/day-of-week"
