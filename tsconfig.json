@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "module": "Node16",
+    "module": "nodenext",
     "target": "es2020",
-    "moduleResolution": "node16",
+    "moduleResolution": "nodenext",
     "rootDir": ".",
     "types": ["node", "jest"],
     "sourceMap": true,
